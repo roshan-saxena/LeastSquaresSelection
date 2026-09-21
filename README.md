@@ -1,4 +1,4 @@
-# Data selection for least squares
+# Data Selection for Least Squares
 
 Code for **Data Selection for Least Squares: Worst-Case Ratios and Residual-Cancelling Coresets**, by Roshan Saxena.
 
