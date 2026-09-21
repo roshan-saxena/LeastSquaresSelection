@@ -1,0 +1,8 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+/results/generated/
+/data/raw/
+/experiments/figure2/input/
+/experiments/figure2/input_*.npz

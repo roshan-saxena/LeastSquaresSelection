@@ -1,0 +1,18 @@
+{
+  "frozen_at": "2026-09-06T02:28:14Z",
+  "reason": "Bounded differential-evolution weight search on all five size-four supports of the chain instance.",
+  "instance": "known_chain1",
+  "supports": "all five supports of size4",
+  "reps": 2,
+  "bounds": [
+    -14,
+    14
+  ],
+  "logits": "three free logits; final logit fixed zero",
+  "initial_population": 24,
+  "iterations": 200,
+  "tol": 1e-10,
+  "atol": 1e-12,
+  "polish": true,
+  "search_scope": "Bounded numerical weight optimization on the enumerated discrete supports."
+}

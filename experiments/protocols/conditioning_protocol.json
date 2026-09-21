@@ -1,0 +1,6 @@
+{
+  "frozen_at": "2026-09-06T02:09:31Z",
+  "reason": "Unwhitened correlated inputs on the matched stress and sensitivity grids; 80-digit evaluation of the 21 conditioning settings.",
+  "correlation": "same dimensions, budgets, reps as initial family; normalized correlated columns retained",
+  "high_precision": "21 conditioning settings, evaluating fixed stored supports and weights at 80 decimal digits."
+}

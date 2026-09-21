@@ -1,0 +1,6 @@
+{
+  "frozen_at": "2026-09-06T02:22:32Z",
+  "reason": "Structured block, chain and overlap cases, including the d=8, n=10 constructions.",
+  "cases": "13 source Table4 instances plus two d8,n10 block constructions",
+  "continuous_search": "uniform plus8 random NM restarts800iterations; exact recovery LP when possible; discrete enumeration complete but continuous optima are local"
+}

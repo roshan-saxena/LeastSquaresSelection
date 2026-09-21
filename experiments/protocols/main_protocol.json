@@ -1,0 +1,270 @@
+{
+  "frozen_at_utc": "2026-09-06T02:03:36Z",
+  "phase": "main evaluation; pilots excluded",
+  "default": {
+    "pool_factor": 8.0,
+    "rank_atol": 1e-08,
+    "solver_rcond": 1e-12,
+    "lp_tol": 1e-09,
+    "support_tol": 1e-09,
+    "coefficient_tol": 1e-07,
+    "restarts": 6,
+    "maxiter": 400,
+    "fatol": 1e-12,
+    "xatol": 1e-08,
+    "initialization": "dirichlet"
+  },
+  "controlled": {
+    "datasets": 10,
+    "budget_factors": [
+      1,
+      1.25,
+      1.5,
+      2
+    ],
+    "integer_budget": "Python round(nd*d), ties to even; save actual n",
+    "replicates": 10,
+    "protocols": [
+      "native",
+      "common"
+    ],
+    "methods": [
+      "uniform",
+      "leverage",
+      "leverage-w",
+      "vol-sampling",
+      "D-optimal",
+      "SpanCancel"
+    ],
+    "reuse": "D-optimal native and SpanCancel LP results reused across replicates; common SC reuses native"
+  },
+  "rff": {
+    "M": [
+      50,
+      100,
+      200
+    ],
+    "replicates": [
+      10,
+      10,
+      5
+    ],
+    "Ntrain": [
+      3600,
+      3600,
+      7200
+    ],
+    "sample": "rng0 choose 12000 from California; first6000 for M50/100, all12000 for M200",
+    "budget_factors": [
+      1,
+      1.25,
+      1.5,
+      2,
+      3
+    ],
+    "gamma": 0.1,
+    "seed": 7,
+    "volume_excluded": true,
+    "protocol": "native"
+  },
+  "stress": {
+    "d_n_N": [
+      {
+        "d": 3,
+        "n": [
+          4
+        ],
+        "N": [
+          6,
+          10,
+          18
+        ]
+      },
+      {
+        "d": 4,
+        "n": [
+          5
+        ],
+        "N": [
+          8,
+          12,
+          24
+        ]
+      },
+      {
+        "d": 6,
+        "n": [
+          7,
+          8
+        ],
+        "N": [
+          10,
+          18,
+          36
+        ]
+      }
+    ],
+    "families": [
+      "random",
+      "correlated",
+      "ill_conditioned",
+      "structured_residual",
+      "overlap",
+      "blocks",
+      "perturbed_blocks"
+    ],
+    "reps": 3,
+    "kappa": 1000000.0,
+    "enumeration": "all supports of sizes1..n for rep0 N6/8; numerical row-span lower-bound pruning; NM8 random plus uniform starts800 iterations; other above-bound cases visit at most120 supports and stop on numerical coefficient/cancellation recovery",
+    "frontier": "d3,4,6; random,blocks,perturbed_blocks,overlap; all n=d..2d; six native methods and baseline common reweighting"
+  },
+  "diagnostics": {
+    "cases": [
+      "random6N240n8",
+      "correlated6N240n8",
+      "structured_residual6N240n8",
+      "overlap6N90n8",
+      "blocks4N20n5",
+      "perturbed_blocks4N20n5",
+      "ill_conditioned6N120n8"
+    ],
+    "reps": 3,
+    "one_factor_at_a_time": true,
+    "pool": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "rank_atol": [
+      0.0001,
+      1e-06,
+      1e-08,
+      1e-10,
+      1e-12
+    ],
+    "solver_rcond": [
+      1e-08,
+      1e-10,
+      1e-12,
+      1e-14
+    ],
+    "lp_tol": [
+      1e-07,
+      1e-09,
+      1e-10
+    ],
+    "support_tol": [
+      1e-07,
+      1e-09,
+      1e-11
+    ],
+    "coefficient_tol": [
+      1e-05,
+      1e-07,
+      1e-09
+    ],
+    "random_restarts": [
+      0,
+      1,
+      3,
+      6,
+      12
+    ],
+    "initialization": [
+      "dirichlet",
+      "lognormal"
+    ],
+    "forced_fallback_reps": 5,
+    "conditioning_kappa": [
+      1,
+      100.0,
+      10000.0,
+      1000000.0,
+      100000000.0,
+      10000000000.0,
+      1000000000000.0
+    ],
+    "large_common": "California RFF50 split0 D-optimal n=64,76,102"
+  },
+  "adversarial": {
+    "cells": [
+      [
+        4,
+        5,
+        8
+      ],
+      [
+        6,
+        7,
+        10
+      ]
+    ],
+    "trials_per_cell": 24,
+    "seed": 77221,
+    "perturbation": "10^Uniform(-8,-.3), whiten and orthogonally project residual",
+    "inner_supports": 8,
+    "inner_random_restarts": 2,
+    "inner_maxiter": 300,
+    "above_bound_support_cap": 150,
+    "claim": "heuristic search, no global counterexample certification"
+  },
+  "runtime": {
+    "N": [
+      200,
+      1000,
+      5000
+    ],
+    "d": [
+      10,
+      30,
+      60
+    ],
+    "budget_factors": [
+      1.25,
+      1.5,
+      2
+    ],
+    "replicates": 3,
+    "threads": 1,
+    "warmup": 1,
+    "fallback_d": [
+      4,
+      10,
+      20
+    ],
+    "fallback_reps": 5,
+    "volume_cells": [
+      [
+        80,
+        6
+      ],
+      [
+        200,
+        10
+      ],
+      [
+        500,
+        20
+      ]
+    ],
+    "volume_reps": 3,
+    "timing": "runtime suite alone after other experiment processes finish; includes fullfit/residual/candidates/LP/fallback/finalvalidation; excludes data generation, file IO and diagnostic-only condition SVD"
+  },
+  "seeds": "SHA256 of stable run labels; first four bytes interpreted little endian; split and feature seeds explicit",
+  "stopping": "fixed grids, NMmaxiter400 baseline800 stronger, tolerances saved; no exclusion for unfavorable results",
+  "zero_thresholds": "ratio near1 abs<=1e-7; certificate separately requires full positive-support rank plus cancellation and coefficient tolerance",
+  "statistical_plan": {
+    "primary": "ten controlled dataset means over method draws, native weights, budget_factor1.5; no seeds as independent datasets",
+    "secondary": "common weights same primary budget",
+    "omnibus": "Friedman paired ranks with ties; Holm over two protocol omnibus pvalues",
+    "posthoc": "Nemenyi all-pairs per protocol, if Holm omnibus significant; multiply posthoc adjusted pvalues by2 for two protocols",
+    "targeted": "two-sided paired Wilcoxon of dataset-mean log-ratio baseline minus SpanCancel; five baselines x two protocols =10 Holm family; zero if absolute log difference<=1e-10, average tied ranks, wilcox removal of zeros, exact sign-flip rank permutation over 2^nonzero<=1024",
+    "effect": "median and mean paired log difference, exponentiated median fold difference; win/tie/loss with same1e-10 threshold",
+    "uncertainty": "replicate SD ddof1, median, mean, geometric mean; deterministic duplicate SD labeled0 no stochastic inference; per-dataset mean95% t intervals descriptive conditional on fixed dataset; macro geometric mean of dataset arithmetic means, arithmetic mean and median reported; no pooling versions of California as distinct datasets",
+    "limitations": "ten curated datasets including scalar classification labels and small dependent-row econometric data; inference conditional to this suite, no population or generalization claim; all other cuts descriptive"
+  },
+  "release_scope": "Saved settings for the reported experiments. The experiment runners implement these grids."
+}

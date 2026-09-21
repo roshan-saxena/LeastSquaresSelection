@@ -1,0 +1,37 @@
+{
+  "all_80_vertices_checked": true,
+  "maximum_relative_difference": 6.122333377289735e-05,
+  "maximum_absolute_difference": 6.255765696416837e-05,
+  "worst": {
+    "panel": "training",
+    "method": "SpanCancel",
+    "budget_factor": 1.5,
+    "pdf_x": 113.51968,
+    "pdf_top": 169.87178825,
+    "archived_vector_ratio": 1.0217943569716144,
+    "reproduced_ratio": 1.0217317993146502,
+    "absolute_difference": 6.255765696416837e-05,
+    "relative_difference": 6.122333377289735e-05
+  },
+  "calibration": [
+    {
+      "panel": "training",
+      "baseline_1_pdf_top": 170.45049025,
+      "major_grid_10_pdf_top": 108.64646325,
+      "major_grid_100_pdf_top": 46.84243624999999,
+      "pdf_points_per_log10": 61.804027000000005,
+      "grid_checks": "First three horizontal gray paths are major ticks 10^0, 10^1, 10^2, consistent with extracted tick labels and equal decade distances."
+    },
+    {
+      "panel": "test",
+      "baseline_1_pdf_top": 170.45049025,
+      "major_grid_10_pdf_top": 105.04195025,
+      "major_grid_100_pdf_top": 39.63341025,
+      "pdf_points_per_log10": 65.40854,
+      "grid_checks": "First three horizontal gray paths are major ticks 10^0, 10^1, 10^2, consistent with extracted tick labels and equal decade distances."
+    }
+  ],
+  "interpretation": "The saved rerun aggregates match the digitized original figure within the stated tolerance. Figure 3 uses the saved rerun aggregates.",
+  "original_figure_sha256": "3e2efa9ee649447113bbb5e02edf016975c20d59777d3b8f9159733856cf9ab2",
+  "preprocessing": "Pre-split standardization and weighted normal equations, matching the Figure 2 protocol."
+}
