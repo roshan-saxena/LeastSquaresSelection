@@ -99,6 +99,7 @@ def main():
     for module in (
         "analysis.reproduce_tables",
         "checks.verify_formula_table",
+        "analysis.plot_figure1",
         "analysis.plot_figure2_saved",
         "analysis.plot_figure3",
         "analysis.plot_budget_frontier",

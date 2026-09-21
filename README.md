@@ -34,10 +34,16 @@ Supply a finite matrix `X` with shape `(N, d)` and a one-dimensional target `y`.
 
 ## Reproduce the paper
 
-Regenerate the numerical tables, statistical summaries, and Figures 2–4 from the supplied records:
+Regenerate the numerical tables, statistical summaries, and Figures 1–4. Figure 1 is calculated directly from the constructed-bound formula; the tables and Figures 2–4 use the supplied records:
 
 ```sh
 python -m experiments.reproduce
+```
+
+To generate Figure 1 alone:
+
+```sh
+python -m analysis.plot_figure1
 ```
 
 Outputs are written to `results/generated/`. Tables are CSV files; uncertainty cells use mean ± sample SD. To reconstruct dataset inputs, check the saved fits and table values, and rerun 23 representative selections:
