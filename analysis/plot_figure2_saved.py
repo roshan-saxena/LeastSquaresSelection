@@ -31,8 +31,8 @@ def main():
     plt.rcdefaults()
     fig, ax = plt.subplots(1, 2, figsize=(8.2, 3.1))
     for p, panel, ti in [
-        (ax[0], "training", r"training loss ratio $L_D(w_F)/L^\star_D$"),
-        (ax[1], "test", "held out test-MSE ratio"),
+        (ax[0], "training", r"(a) training loss ratio $L_D(w_F)/L_D^\star$"),
+        (ax[1], "test", "(b) held-out test MSE ratio"),
     ]:
         for m in col:
             a = sorted((float(k), v) for k, v in z[panel][m].items())

@@ -123,8 +123,8 @@ def main():
     )
     fig, ax = plt.subplots(1, 2, figsize=(8.2, 3.1))
     for p, dat, ti in (
-        (ax[0], tr, "training loss ratio $L_D(w_F)/L^\\star_D$"),
-        (ax[1], te, "held out test-MSE ratio"),
+        (ax[0], tr, r"(a) training loss ratio $L_D(w_F)/L_D^\star$"),
+        (ax[1], te, "(b) held-out test MSE ratio"),
     ):
         for mth in METHODS:
             g = gm(dat[mth])
