@@ -264,7 +264,8 @@ def fallback(P, S, cfg, rng):
     def f(v):
         try:
             wf = fit(P.X, P.y, S, weights(v), cfg)
-            return 1 + float(np.linalg.norm(R @ (wf - P.w)) ** 2) / P.L
+            error = float(np.linalg.norm(R @ (wf - P.w)) ** 2)
+            return 1 + error / P.L if P.L > 0 else error
         except (ValueError, np.linalg.LinAlgError, FloatingPointError):
             return float("inf")
 
@@ -275,7 +276,7 @@ def fallback(P, S, cfg, rng):
             start=-1,
             kind="uniform_evaluation",
             initial_weights=a.tolist(),
-            ratio=best,
+            ratio=best if P.L > 0 else P.evaluate(S, a, cfg)["ratio"],
             success=True,
             nfev=1,
             nit=0,
@@ -395,9 +396,18 @@ def select(P, n, method="SpanCancel", cfg=None, seed=0, force_fallback=False):
             U, s, _ = np.linalg.svd(P.X, full_matrices=False)
             keep = s > cfg.solver_rcond * s[0]
             h = np.sum(U[:, keep] ** 2, axis=1)
-            p = h / h.sum()
-            S = rng.choice(P.N, n, replace=False, p=p)
-            a = 1 / p[S] if method == "leverage-w" else np.ones(n)
+            positive = np.flatnonzero(h > 0)
+            if len(positive) == 0:
+                S = rng.choice(P.N, n, replace=False)
+                a = np.ones(n)
+            else:
+                p = h / h.sum()
+                S = (
+                    positive
+                    if n > len(positive)
+                    else rng.choice(P.N, n, replace=False, p=p)
+                )
+                a = 1 / p[S] if method == "leverage-w" else np.ones(len(S))
         elif method == "D-optimal":
             S = vol(P.X, n)
             a = np.ones(n)

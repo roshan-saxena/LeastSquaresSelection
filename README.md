@@ -34,7 +34,7 @@ Supply a finite matrix `X` with shape `(N, d)` and a one-dimensional target `y`.
 
 ## Reproduce the paper
 
-Regenerate the numerical tables, statistical summaries, and Figures 1–4. Figure 1 is calculated directly from the constructed-bound formula; the tables and Figures 2–4 use the supplied records:
+Regenerate Figures 1–4 and the associated experimental tables and statistical summaries. Figure 1 is calculated directly from the constructed-bound formula; the tables and Figures 2–4 use the supplied records:
 
 ```sh
 python -m experiments.reproduce
@@ -53,6 +53,8 @@ python -m experiments.reproduce --verify --replay --download-california
 ```
 
 The download flag permits scikit-learn to fetch California housing. Other public datasets use the installed library loaders. These commands use one numerical thread. Add `--include-response` to also check the detailed numerical tables cited in the reviewer response. All generated files remain separate from supplied results.
+
+For the Gas CO and Superconductivity case studies (Table 7 and the additional Table F.3 rows), see the [regression reproduction instructions](experiments/regression/README.md).
 
 ## Run new experiments
 

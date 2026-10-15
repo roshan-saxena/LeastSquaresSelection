@@ -1,0 +1,48 @@
+{
+  "python": "3.12.4",
+  "platform": "macOS-27.0-arm64-arm-64bit",
+  "machine": "arm64",
+  "processor": "Apple M2 Pro",
+  "physical_memory_bytes": 17179869184,
+  "packages": {
+    "threadpoolctl": "3.6.0",
+    "cloudpickle": "3.1.2",
+    "joblib": "1.6.0",
+    "scipy": "1.13.1",
+    "pytz": "2026.5",
+    "pip": "24.0",
+    "pandas": "2.2.2",
+    "scikit-learn": "1.4.2",
+    "numpy": "1.26.4",
+    "tzdata": "2026.5",
+    "python-dateutil": "2.9.0.post0",
+    "six": "1.17.0"
+  },
+  "numerical_threads": [
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 1,
+      "prefix": "libopenblas",
+      "version": "0.3.23.dev",
+      "threading_layer": "pthreads",
+      "architecture": "armv8"
+    },
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 1,
+      "prefix": "libomp",
+      "version": null
+    },
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 1,
+      "prefix": "libopenblas",
+      "version": "0.3.27",
+      "threading_layer": "pthreads",
+      "architecture": "neoversen1"
+    }
+  ]
+}

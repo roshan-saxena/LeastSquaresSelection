@@ -1,0 +1,58 @@
+{
+  "study": "Gas CO and Superconductivity case studies",
+  "version": 2,
+  "engine_commit": "cef3d15b2274a92a5b882fc2edf61e10a9ada933",
+  "engine_sha256": "bb7b73406a97fb523b5c7b5b23af2e04aaa2de001678568bee4e3472521020ba",
+  "tasks": [
+    "gas_co",
+    "superconductivity"
+  ],
+  "dataset_splits": {
+    "gas": "2011-2013 train; 2014-2015 test; 9 predictors, exclude year and both emissions targets",
+    "superconductivity": "GroupShuffleSplit(test_size=0.2,random_state=0), connected groups joining identical supplied elemental compositions OR identical 81-predictor vectors; all rows retained"
+  },
+  "preprocessing": "float64; train-only population mean/std of predictors and target, explicit intercept; all rows retained; no whitening",
+  "budgets": [
+    "d",
+    "ceil(1.25*d)",
+    "ceil(1.5*d)",
+    "2*d"
+  ],
+  "primary": "ceil(1.5*d)",
+  "methods": [
+    "SpanCancel",
+    "uniform",
+    "leverage",
+    "leverage-w",
+    "D-optimal"
+  ],
+  "control": "existing common reweighting on D-optimal support at primary budget",
+  "repetitions": {
+    "stochastic_baselines": 10,
+    "paired_leverage_supports": true,
+    "deterministic_science": 1,
+    "heuristic_fallback_seeds": 10,
+    "primary_deterministic_timing_total": 3
+  },
+  "config": {
+    "pool_factor": 8.0,
+    "rank_atol": 1e-08,
+    "solver_rcond": 1e-12,
+    "lp_tol": 1e-09,
+    "support_tol": 1e-09,
+    "coefficient_tol": 1e-07,
+    "restarts": 6,
+    "maxiter": 400,
+    "fatol": 1e-12,
+    "xatol": 1e-08,
+    "initialization": "dirichlet"
+  },
+  "resource_limits": {
+    "workers": 1,
+    "numerical_threads": 1,
+    "attempt_seconds": 1800,
+    "cumulative_execution_seconds": 86400
+  },
+  "analysis": "Descriptive summaries by task and budget; means, standard deviations and ranges across all stochastic runs.",
+  "verification": "Independent reconstruction of saved selected fits and QR cross-checks of full fits and numerical recovery."
+}

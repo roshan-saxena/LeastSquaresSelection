@@ -1,0 +1,11 @@
+{
+  "active_attempt": null,
+  "status": "complete",
+  "scope": [
+    "gas_co",
+    "superconductivity"
+  ],
+  "outcomes": {
+    "complete": 284
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "gas_co": {
+    "results": {
+      "original_row_reconstruction": "Every gas/superconductivity original row reconstructed with independently computed training moments.",
+      "train_only_scalers_verified": true,
+      "n_original": 36733,
+      "n_train": 22191,
+      "n_test": 14542
+    },
+    "issues": [],
+    "npz_sha256": "33d91f6ac24c0109d05b76cddeaee602efa6ac8add42bd72a5be0459a3828877",
+    "metadata_sha256": "5d6d218801fdf8f3bd26fc9a734bccbddeb4eda1f30ef3399c6354a4f63236d9"
+  },
+  "superconductivity": {
+    "results": {
+      "original_row_reconstruction": "Every gas/superconductivity original row reconstructed with independently computed training moments.",
+      "train_only_scalers_verified": true,
+      "n_original": 21263,
+      "n_train": 17148,
+      "n_test": 4115,
+      "union_components": 15170,
+      "component_minimum_row_label_sha256": "9886509e884f63cf04fff57000fcdbcca1067fe02bc0aca0cd982db16b9901dc"
+    },
+    "issues": [],
+    "npz_sha256": "3006db877d628c624a1704451e0ac0cbfa566bfb400db44f43badf3e66112343",
+    "metadata_sha256": "c01a60aff422035c764b21545f2cdac5042153855f442db7ef64a0c007ea75f8"
+  }
+}

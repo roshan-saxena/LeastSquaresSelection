@@ -1,0 +1,12 @@
+{
+  "tasks": [
+    "gas_co",
+    "superconductivity"
+  ],
+  "recorded_protocol_sha256": "9841733a27df2f5cded6507dc2cbfe429d9bce989bb22bf60709ea4f58f46425",
+  "package_protocol_sha256": "38066a453af5a4852a734117a167013b9e16882eae36e0fdbc16da9fabdbda81",
+  "recorded_runner_sha256": "9fbd5c00103e17d0c9fff013afb100c042e0cf16c57a91aebb08addbe3be6912",
+  "package_runner_sha256": "60624cb13af96dcc3b792731d1606af7357256f225eecf4478a7243349aafeb1",
+  "recorded_preparation_source_sha256": "accce2c6f4e990bed245e94e723e0513b06c4949de73b5d404748a64917dec65",
+  "package_preparation_source_sha256": "acf2a58ab3cf1f757530c7da1a7b06038f4ff611d61d1a8b88e9b6ed66802879"
+}

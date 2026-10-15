@@ -1,0 +1,530 @@
+{
+  "attempt": {
+    "execution_wall_s": 0.31648883305024356,
+    "returncode": 0,
+    "started_at_utc": "2026-10-08T12:40:19.364104+00:00",
+    "timeout_s": 1800
+  },
+  "branch": "native",
+  "checks": {
+    "checks": {
+      "coefficient_finite": true,
+      "config_unchanged": true,
+      "finite_nonnegative_weights": true,
+      "indices_in_range": true,
+      "indices_unique": true,
+      "loss_matches_saved": true,
+      "normalized_weights": true,
+      "ratio_matches_saved": true,
+      "selected_count_within_budget": true
+    },
+    "passed": true,
+    "reconstructed_loss": 11481.108085928026,
+    "reconstructed_ratio": 1.2270901425820717
+  },
+  "config": {
+    "coefficient_tol": 1e-07,
+    "fatol": 1e-12,
+    "initialization": "dirichlet",
+    "lp_tol": 1e-09,
+    "maxiter": 400,
+    "pool_factor": 8.0,
+    "rank_atol": 1e-08,
+    "restarts": 6,
+    "solver_rcond": 1e-12,
+    "support_tol": 1e-09,
+    "xatol": 1e-08
+  },
+  "engine_result": {
+    "N": 22191,
+    "branch": "native",
+    "candidate_s": 3.8207974284887314e-05,
+    "coefficient_error": 5.326217872967359,
+    "coefficient_error_relative": 1.8244764024395852,
+    "coefficient_recovery": false,
+    "condition_X": 65.65032167354008,
+    "config": {
+      "coefficient_tol": 1e-07,
+      "fatol": 1e-12,
+      "initialization": "dirichlet",
+      "lp_tol": 1e-09,
+      "maxiter": 400,
+      "pool_factor": 8.0,
+      "rank_atol": 1e-08,
+      "restarts": 6,
+      "solver_rcond": 1e-12,
+      "support_tol": 1e-09,
+      "xatol": 1e-08
+    },
+    "d": 10,
+    "fallback_s": 0.0,
+    "fallback_used": false,
+    "full_fit_s": 0.001795999938622117,
+    "full_loss": 9356.368931274446,
+    "full_stationarity": 5.747324711382752e-11,
+    "indices": [
+      4414,
+      5167,
+      18943,
+      15096,
+      6405,
+      13595,
+      19362,
+      21835,
+      4379,
+      20962,
+      16969,
+      6440,
+      2886,
+      13934,
+      3313,
+      171,
+      18147,
+      14016,
+      4918,
+      19599
+    ],
+    "loss": 11481.108085928008,
+    "loss_identity_error": 9.094947017729282e-12,
+    "lp_attempts": [],
+    "lp_s": 0.0,
+    "max_weight": 0.05,
+    "method": "uniform",
+    "min_weight": 0.05,
+    "near_one": false,
+    "numerical_certificate": false,
+    "pool_size": 0,
+    "rank_detected": 10,
+    "rank_solver": 10,
+    "ratio": 1.2270901425820697,
+    "residual_cancellation_error": 0.3093778353909689,
+    "residual_cancellation_scaled": 0.07175305177872456,
+    "residual_s": 0.00032283400651067495,
+    "restarts": [],
+    "seed": 1022554128,
+    "selected_count": 20,
+    "selection_s": 0.0006882499437779188,
+    "span_repair": false,
+    "support_rank": 10,
+    "support_size": 20,
+    "test_mse": 1.9831919849183544,
+    "test_prediction_error": 209.108232403178,
+    "test_ratio": 2.832181565914611,
+    "total_s": 0.002807083888910711,
+    "validation_s": 0.0006443329621106386,
+    "weighted_condition": 98.04777803385994,
+    "weighted_solver_rank": 10,
+    "weights": [
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05
+    ]
+  },
+  "environment": {
+    "platform": "macOS-27.0-arm64-arm-64bit",
+    "python": "3.12.4",
+    "threadpools": [
+      {
+        "architecture": "armv8",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libopenblas",
+        "threading_layer": "pthreads",
+        "user_api": "blas",
+        "version": "0.3.23.dev"
+      },
+      {
+        "architecture": "neoversen1",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libopenblas",
+        "threading_layer": "pthreads",
+        "user_api": "blas",
+        "version": "0.3.27"
+      }
+    ],
+    "versions": {
+      "numpy": "1.26.4",
+      "scipy": "1.13.1",
+      "threadpoolctl": "3.6.0"
+    }
+  },
+  "full_model_record": "records/full_models/gas_co.json",
+  "kind": "science",
+  "metadata": {
+    "bytes": 3528996,
+    "checks": {
+      "constant_predictor_indices": {
+        "all_original_rows": [],
+        "test_rows": [],
+        "training_rows": []
+      },
+      "duplicates": {
+        "features_and_target": {
+          "cross_split_distinct_duplicate_groups": 0,
+          "duplicate_groups": 2,
+          "duplicate_rows_after_first": 7,
+          "max_group_size": 5,
+          "test_duplicate_rows_after_first": 7,
+          "train_duplicate_rows_after_first": 0,
+          "unique_rows": 36726
+        },
+        "features_only": {
+          "cross_split_distinct_duplicate_groups": 0,
+          "duplicate_groups": 2,
+          "duplicate_rows_after_first": 7,
+          "max_group_size": 5,
+          "test_duplicate_rows_after_first": 7,
+          "train_duplicate_rows_after_first": 0,
+          "unique_rows": 36726
+        },
+        "method": "Float64 numerical equality, signed-zero-canonical SHA-256 index with direct equality confirmation for every duplicate group."
+      },
+      "features": {
+        "dtype": "float64",
+        "missing_or_nonfinite_count": 0
+      },
+      "original_rows_preserved": true,
+      "prepared_arrays_readback_exact": true,
+      "split_index_overlap_count": 0,
+      "target": {
+        "dtype": "float64",
+        "missing_or_nonfinite_count": 0
+      },
+      "test_design": {
+        "condition_number_2": 50.703247753183724,
+        "condition_number_is_infinite": false,
+        "largest_singular_value": 257.35602684807685,
+        "rank_absolute_1e-8": 10,
+        "rank_absolute_threshold": 1e-08,
+        "rank_relative_1e-12": 10,
+        "rank_relative_threshold": 1e-12,
+        "singular_values": [
+          257.35602684807685,
+          157.87877412119443,
+          155.02799388584478,
+          110.4774433009972,
+          82.38736368314981,
+          63.18072409187156,
+          33.348091380468354,
+          26.164163335787514,
+          7.041234620772112,
+          5.075730613960861
+        ],
+        "smallest_singular_value": 5.075730613960861
+      },
+      "training_design": {
+        "condition_number_2": 65.65032167354008,
+        "condition_number_is_infinite": false,
+        "largest_singular_value": 330.50982703423745,
+        "rank_absolute_1e-8": 10,
+        "rank_absolute_threshold": 1e-08,
+        "rank_relative_1e-12": 10,
+        "rank_relative_threshold": 1e-12,
+        "singular_values": [
+          330.50982703423745,
+          201.790854648572,
+          148.9664391733923,
+          143.04678021631673,
+          111.40091157135967,
+          101.76137270276095,
+          79.9498912603232,
+          8.399838722181372,
+          6.848083482171596,
+          5.034397678624737
+        ],
+        "smallest_singular_value": 5.034397678624737
+      }
+    },
+    "design_dimension": 10,
+    "feature_names": [
+      "intercept",
+      "AT",
+      "AP",
+      "AH",
+      "AFDP",
+      "GTEP",
+      "TIT",
+      "TAT",
+      "TEY",
+      "CDP"
+    ],
+    "metadata_path": "data/prepared/gas_co.json",
+    "n_original": 36733,
+    "n_test": 14542,
+    "n_train": 22191,
+    "path": "data/prepared/gas_co.npz",
+    "predictors_excluding_intercept": 9,
+    "raw_archive_sha256": "55fdb1acc25f05bd9c77aac285c424e9154ffb0dbf1bbadb56b69a1142231295",
+    "raw_original_file_sha256": {
+      "gt_2011.csv": "d87ceef9aa59533cc7d924d10de241b1b06ecd11f9b26bab59191ea0f8a76b9a",
+      "gt_2012.csv": "be54b9d0e1a7de40c55d32fa489e75de892b000c066b5a09f09a19124ee29100",
+      "gt_2013.csv": "13c437bb440ec2045bd12057e6654c41dd4107a661eac16ba2e878e897a08f9e",
+      "gt_2014.csv": "c2a03c92c9c3207aad0c6be7de8d9b5b4bfa4720ad0efb2c1f21b6cec4d3f3fa",
+      "gt_2015.csv": "9b08f35fde0d4b138232a605db4093c2b8bf9d6757e6f1fbd9534ad616c13591"
+    },
+    "scaling": {
+      "intercept_added_after_scaling": true,
+      "intercept_column_index": 0,
+      "method": "sklearn.preprocessing.StandardScaler, population variance (ddof=0), fitted on training rows only for both predictors and target.",
+      "no_other_transformations_or_row_removals": true,
+      "x_mean": [
+        17.712246747330077,
+        1012.8126069127082,
+        79.55522437024052,
+        4.037750015772173,
+        25.31787251588477,
+        1083.0802802938024,
+        545.5201698886962,
+        133.53739308728888,
+        12.060207660763387
+      ],
+      "x_scale": [
+        7.352623121510599,
+        6.396443710415441,
+        13.914704940338098,
+        0.8102046399406125,
+        4.234052004886048,
+        16.840385550579313,
+        7.708534192915003,
+        16.025746022339572,
+        1.1142397699761506
+      ],
+      "y_mean": [
+        2.2143900830431256
+      ],
+      "y_scale": [
+        2.2956947715314895
+      ]
+    },
+    "sha256": "33d91f6ac24c0109d05b76cddeaee602efa6ac8add42bd72a5be0459a3828877",
+    "source_dataset": "gas",
+    "split": {
+      "index_hash_encoding": "Contiguous original-row index array, little-endian signed int64, SHA-256.",
+      "other_emission_target_is_predictor": false,
+      "per_year": [
+        {
+          "original_row_start_zero_based": 0,
+          "original_row_stop_exclusive": 7411,
+          "rows": 7411,
+          "year": 2011
+        },
+        {
+          "original_row_start_zero_based": 7411,
+          "original_row_stop_exclusive": 15039,
+          "rows": 7628,
+          "year": 2012
+        },
+        {
+          "original_row_start_zero_based": 15039,
+          "original_row_stop_exclusive": 22191,
+          "rows": 7152,
+          "year": 2013
+        },
+        {
+          "original_row_start_zero_based": 22191,
+          "original_row_stop_exclusive": 29349,
+          "rows": 7158,
+          "year": 2014
+        },
+        {
+          "original_row_start_zero_based": 29349,
+          "original_row_stop_exclusive": 36733,
+          "rows": 7384,
+          "year": 2015
+        }
+      ],
+      "row_index_basis": "Zero-based row in ascending-year concatenation, excluding CSV headers.",
+      "rule": "Concatenate original yearly files in ascending year; 2011-2013 training, 2014-2015 test.",
+      "test_indices_sha256": "585c47f6c9d4ada0ca0bab85cceacde63d08d2187454b5861fe8e38637bdab1f",
+      "test_years": [
+        2014,
+        2015
+      ],
+      "train_indices_sha256": "253e74b88bf1d5cb90464ade1e9a8dded9e64fe77e1fa6d7dc7b265785fec5f1",
+      "train_years": [
+        2011,
+        2012,
+        2013
+      ],
+      "year_is_predictor": false
+    },
+    "target_name": "CO"
+  },
+  "method": "uniform",
+  "metrics": {
+    "ratio_denominator_positive": true,
+    "ratio_undefined": false,
+    "test_prediction_difference_l2_original": 480.0486758121673,
+    "test_prediction_difference_rmse_original": 3.980826098110208,
+    "test_rmse_original": 3.2329316608216194,
+    "train_prediction_difference_l2_original": 105.81980470429778,
+    "train_prediction_difference_rmse_original": 0.7103600333839409,
+    "train_rmse_original": 1.6512681763983252
+  },
+  "model": {
+    "coefficients": [
+      0.029230313884452432,
+      -0.0086864614193136,
+      0.20499714131087252,
+      0.03662365229605878,
+      -0.011838001731952584,
+      2.417100264138788,
+      -2.5626207973691453,
+      0.923019185999931,
+      1.0684775111550706,
+      -0.9632112919035447
+    ]
+  },
+  "n": 20,
+  "primary": false,
+  "protocol": "native",
+  "rep": 4,
+  "run_key": "gas_co__n20__native__uniform__rep04__science00",
+  "saved_at_utc": "2026-10-08T12:40:19.629900+00:00",
+  "schema_version": 1,
+  "scientific_observation": true,
+  "seed": 1022554128,
+  "seed_components": [
+    "large_regression_v1",
+    "gas_co",
+    20,
+    "uniform",
+    4
+  ],
+  "seed_group": "uniform",
+  "seed_namespace": "large_regression_v1",
+  "source_hashes": {
+    "engine_sha256": "bb7b73406a97fb523b5c7b5b23af2e04aaa2de001678568bee4e3472521020ba",
+    "prepared_metadata_sha256": "5d6d218801fdf8f3bd26fc9a734bccbddeb4eda1f30ef3399c6354a4f63236d9",
+    "prepared_npz_sha256": "33d91f6ac24c0109d05b76cddeaee602efa6ac8add42bd72a5be0459a3828877",
+    "protocol_sha256": "9841733a27df2f5cded6507dc2cbfe429d9bce989bb22bf60709ea4f58f46425",
+    "runner_sha256": "9fbd5c00103e17d0c9fff013afb100c042e0cf16c57a91aebb08addbe3be6912"
+  },
+  "status": "complete",
+  "stochastic_observation": true,
+  "task": "gas_co",
+  "timing": {
+    "engine_call_wall_s": 0.0025868330849334598,
+    "extra_saved_model_and_basic_checks_s": 0.0007125419797375798,
+    "final_evaluation_s": 0.0006455839611589909,
+    "final_selected_fit_s": 8.716597221791744e-05,
+    "internal_algorithm_evaluation_s": 0,
+    "native_formula": "native_precomputation + selection_s - final_evaluation_without_fit",
+    "native_method_s": 0.0001298319548368454,
+    "native_support_construction_s": 0.0,
+    "observed_calls": [
+      {
+        "after_final_evaluation": false,
+        "name": "fit",
+        "parents": [
+          "evaluate_final"
+        ],
+        "seconds": 8.716597221791744e-05
+      },
+      {
+        "after_final_evaluation": false,
+        "name": "svd",
+        "parents": [
+          "evaluate_final"
+        ],
+        "seconds": 2.6708003133535385e-05
+      },
+      {
+        "after_final_evaluation": false,
+        "name": "svd",
+        "parents": [
+          "evaluate_final",
+          "rank"
+        ],
+        "seconds": 1.2292061001062393e-05
+      },
+      {
+        "after_final_evaluation": false,
+        "name": "rank",
+        "parents": [
+          "evaluate_final"
+        ],
+        "seconds": 2.0959065295755863e-05
+      },
+      {
+        "after_final_evaluation": false,
+        "name": "evaluate_final",
+        "parents": [],
+        "seconds": 0.0006455839611589909
+      },
+      {
+        "after_final_evaluation": true,
+        "name": "svd",
+        "parents": [
+          "rank"
+        ],
+        "seconds": 0.001773832947947085
+      },
+      {
+        "after_final_evaluation": true,
+        "name": "rank",
+        "parents": [],
+        "seconds": 0.0018042910378426313
+      }
+    ],
+    "post_selection_rank_diagnostic_s": 0.0018042910378426313,
+    "preparation": {
+      "amortization": "The full reference fit/residual cache is shared across baseline runs; inherited engine times are preserved but excluded from native baseline cost.",
+      "cache_load_s": 0.0006003750022500753,
+      "full_model_record": "records/full_models/gas_co.json",
+      "inherited_full_fit_s": 0.001795999938622117,
+      "inherited_residual_precompute_s": 0.00032283400651067495,
+      "native_precomputation_s": 0.0
+    },
+    "raw_engine_total_note": "Preserved engine field: always includes its full_fit_s/residual_s; not used as fair native method timing.",
+    "raw_engine_total_s": 0.002807083888910711,
+    "shared_final_evaluation_without_fit_s": 0.0005584179889410734,
+    "svd_calls": [
+      {
+        "after_final_evaluation": false,
+        "name": "svd",
+        "parents": [
+          "evaluate_final"
+        ],
+        "seconds": 2.6708003133535385e-05
+      },
+      {
+        "after_final_evaluation": false,
+        "name": "svd",
+        "parents": [
+          "evaluate_final",
+          "rank"
+        ],
+        "seconds": 1.2292061001062393e-05
+      },
+      {
+        "after_final_evaluation": true,
+        "name": "svd",
+        "parents": [
+          "rank"
+        ],
+        "seconds": 0.001773832947947085
+      }
+    ],
+    "timing_role": "One of ten stochastic seed timings"
+  },
+  "trial": 0
+}

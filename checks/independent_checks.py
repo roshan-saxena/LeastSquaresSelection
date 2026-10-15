@@ -7,7 +7,7 @@ import itertools, json, sys
 import numpy as np
 from scipy.linalg import lstsq
 from threadpoolctl import threadpool_limits
-from spancancel.engine import Problem, fit, qr
+from spancancel.engine import Problem, fit, qr, reweight, select
 
 
 def main():
@@ -87,6 +87,33 @@ def main():
         rr = P.evaluate(np.arange(14), np.ones(14))
         assert rr["numerical_certificate"]
         checks.append(dict(name="full_support_cancellation_check", result=rr))
+        for X, y, budgets in (
+            (np.column_stack((np.ones(6), np.arange(6))), np.zeros(6), (2, 6)),
+            (np.eye(4), np.arange(4.0), (4,)),
+        ):
+            P = Problem(X, y)
+            assert P.L == 0
+            for n in budgets:
+                selected = select(P, n, seed=0)
+                for result in (selected, reweight(P, selected, P.cfg, seed=0)):
+                    assert result["loss"] == 0 and result["ratio"] == 1
+                    assert result["selected_count"] <= n
+                    assert all(
+                        start["ratio"] == 1
+                        for start in result["restarts"]
+                        if start["kind"] == "uniform_evaluation"
+                    )
+        checks.append(dict(name="zero_loss_selection_and_reweighting", passed=True))
+        for X in (np.vstack((np.eye(3), np.zeros((5, 3)))), np.zeros((8, 3))):
+            P = Problem(X, np.arange(8.0))
+            for method in ("leverage", "leverage-w"):
+                for n in (3, 4, 8):
+                    result = select(P, n, method, seed=0)
+                    weights = np.asarray(result["weights"])
+                    assert 0 < result["selected_count"] <= n
+                    assert np.isfinite(weights).all() and np.all(weights > 0)
+                    assert np.isfinite(result["ratio"])
+        checks.append(dict(name="zero_leverage_selection", passed=True))
         # Normal equations cutoff 1e-12 on X^TX drops directions already at kappa(X)>1e6.
         Q = np.linalg.qr(rng.normal(size=(20, 4)))[0]
         X = Q @ np.diag([1, 1e-3, 1e-6, 1e-8])
